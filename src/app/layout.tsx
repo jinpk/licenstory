@@ -31,7 +31,31 @@ export default async function RootLayout({
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-        <RootProviders cookies={cookies}>{children}</RootProviders>
+        <RootProviders cookies={cookies}>
+            <div className={"w-full h-6 bg-chart-1"}></div>
+            <div className={"flex min-h-screen p-20 bg-[#EAEAEA]"}>
+                <div
+                    className="m-auto w-full max-w-[700px] relative">
+                    <div>
+                        <h1 className={"font-bold text-5xl"}>
+                            LicenStory
+                        </h1>
+                        <div>
+                            <h2 className={"text-lg font-medium"}>
+                                Where IP licensing becomes business as a story
+                            </h2>
+                            <h3 className={"text-neutral-500"}>
+                                Powered on Story Protocol, Leveraged by AGI
+                            </h3>
+                        </div>
+                        <div className={"mt-[64px] bg-white border rounded-xl px-6  py-10 w-full border-black"}>
+                            {children}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </RootProviders>
         </body>
         </html>
     );

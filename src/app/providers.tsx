@@ -18,8 +18,7 @@ const metadata = {
     icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
-// Create the modal
-const modal = createAppKit({
+createAppKit({
     adapters: [wagmiAdapter],
     projectId: projectId,
     networks: networks as any as [AppKitNetwork, ...AppKitNetwork[]],
@@ -29,6 +28,7 @@ const modal = createAppKit({
         analytics: true // Optional - defaults to your Cloud configuration
     }
 })
+
 
 export default function RootProviders({children, cookies}: { children: ReactNode; cookies: string | null }) {
     const initialState = cookieToInitialState(wagmiAdapter.wagmiConfig as Config, cookies)
