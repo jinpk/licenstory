@@ -1,7 +1,6 @@
 'use client'
 
 import {uploadJSONToFile, uploadJSONToIPFS} from "@/lib/pinta";
-import {createHash} from "node:crypto";
 import {useWalletClient} from "wagmi";
 import {useEffect, useRef, useState} from "react";
 import {useForm} from "react-hook-form";
@@ -22,6 +21,7 @@ import {useIpStore} from "@/lib/use-ip-store";
 import {useRouter} from "next/navigation";
 import {IPMetadata} from "@/lib/types";
 import {Separator} from "@/components/ui/separator";
+import { createHash } from "crypto";
 
 interface RegistFormData {
     title: string
