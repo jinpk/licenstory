@@ -3,8 +3,22 @@
 import {Button} from "@/components/ui/button"
 import {Separator} from "@/components/ui/separator";
 import {useCampaignStore} from "@/lib/use-campaign-store";
+import {useSearchParams} from "next/navigation";
+import {FUNDING_POOL_CONTRACT_ABI} from "@/lib/utils";
+import {useContractReads, useReadContract, useReadContracts} from "wagmi";
 
 export default function CampaignPage() {
+    const searchParams = useSearchParams();
+    const campaignId = searchParams.get("id") as string;
+
+    const readCampaign =useReadContracts({
+        contracts: ['ipId','metadataURI', 'priceEth','ratios']
+        abi: FUNDING_POOL_CONTRACT_ABI,
+        address: campaignId as `0x${string}`,
+    })
+
+    const a = FUNDING_POOL_CONTRACT_ABI
+
     const campaignMetadata = useCampaignStore(s => s.metadata)
 
     if (!campaignMetadata.productName) return null

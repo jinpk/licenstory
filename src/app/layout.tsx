@@ -42,7 +42,7 @@ export default async function RootLayout({
                         </h1>
                         <div>
                             <h2 className={"text-lg font-medium"}>
-                                Where IP licensing becomes business as a story
+                                Where IP licensing becomes business
                             </h2>
                             <h3 className={"text-neutral-500"}>
                                 Powered on Story Protocol, Leveraged by AGI
